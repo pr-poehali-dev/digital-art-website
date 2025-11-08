@@ -10,16 +10,66 @@ interface ArtType {
   icon: string;
   artists: string[];
   examples: string;
+  imageUrl?: string;
 }
 
 const artTypes: ArtType[] = [
   {
-    id: '3d',
-    title: '3D-Искусство',
-    description: 'Создание трехмерных объектов, персонажей и окружений с помощью программ моделирования.',
+    id: '2d',
+    title: '2D-Иллюстрации',
+    description: 'Создание плоских изображений с помощью цифровых инструментов и техник рисования.',
+    icon: 'Image',
+    artists: ['Loish', 'James Jean', 'Ilya Kuvshinov'],
+    examples: 'Концепт-арт, книжные иллюстрации, комиксы'
+  },
+  {
+    id: '3d-modeling',
+    title: '3D-Моделирование',
+    description: 'Создание трехмерных объектов, персонажей и окружений для игр, кино и визуализаций.',
     icon: 'Box',
     artists: ['Beeple', 'Alberto Mielgo', 'Ian Hubert'],
     examples: 'Скульптинг персонажей, архитектурная визуализация, рендеринг сцен'
+  },
+  {
+    id: 'animation',
+    title: 'Анимация',
+    description: 'Оживление статичных изображений через последовательность кадров и движение.',
+    icon: 'Film',
+    artists: ['Glen Keane', 'Genndy Tartakovsky', 'Rebecca Sugar'],
+    examples: '2D-анимация, моушн-дизайн, анимированные персонажи'
+  },
+  {
+    id: 'vr',
+    title: 'Виртуальная Реальность',
+    description: 'Создание иммерсивных 3D-миров и интерактивных пространств для VR-устройств.',
+    icon: 'Glasses',
+    artists: ['Marshmallow Laser Feast', 'Chris Milk', 'Rachel Rossin'],
+    examples: 'VR-инсталляции, интерактивные миры, 360° опыт'
+  },
+  {
+    id: 'generative',
+    title: 'Генеративное Искусство',
+    description: 'Произведения, создаваемые автономными системами по заданным алгоритмам.',
+    icon: 'Code',
+    artists: ['Tyler Hobbs', 'Manolo Gamboa Naon', 'Casey Reas'],
+    examples: 'Алгоритмические паттерны, фракталы, процедурная генерация',
+    imageUrl: 'https://cdn.poehali.dev/projects/810f35c3-7b6e-48ec-b567-d0622105836e/files/f5188018-b8dc-40ee-bfdf-6fd77b8307d3.jpg'
+  },
+  {
+    id: 'photo',
+    title: 'Цифровая Фотография',
+    description: 'Фотоискусство с использованием цифровой обработки и постобработки.',
+    icon: 'Camera',
+    artists: ['Erik Johansson', 'Brandon Woelfel', 'Petra Collins'],
+    examples: 'HDR-фотография, композитинг, цифровая ретушь'
+  },
+  {
+    id: 'collage',
+    title: 'Цифровой Коллаж',
+    description: 'Создание композиций из различных изображений и текстур.',
+    icon: 'Layers',
+    artists: ['Eugenia Loli', 'Beth Hoeckel', 'Rocco Malatesta'],
+    examples: 'Сюрреалистические коллажи, фотомонтаж, миксмедиа'
   },
   {
     id: 'ai',
@@ -27,23 +77,65 @@ const artTypes: ArtType[] = [
     description: 'Искусство, созданное с помощью нейросетей и алгоритмов машинного обучения.',
     icon: 'Brain',
     artists: ['Refik Anadol', 'Sofia Crespo', 'Mario Klingemann'],
-    examples: 'Генеративные портреты, стилизация изображений, дипфейки'
+    examples: 'Генеративные портреты, стилизация изображений, дипфейки',
+    imageUrl: 'https://cdn.poehali.dev/projects/810f35c3-7b6e-48ec-b567-d0622105836e/files/7287a18c-b282-45aa-a7e3-c81a8d4e5ae9.jpg'
+  },
+  {
+    id: 'multimedia',
+    title: 'Мультимедийные Инсталляции',
+    description: 'Интерактивные арт-объекты, сочетающие видео, звук и цифровые технологии.',
+    icon: 'MonitorPlay',
+    artists: ['teamLab', 'Rafael Lozano-Hemmer', 'Studio Drift'],
+    examples: 'Проекционный маппинг, интерактивные скульптуры, светоинсталляции'
+  },
+  {
+    id: 'typography',
+    title: 'Типографика',
+    description: 'Искусство оформления текста, создание шрифтов и композиций из букв.',
+    icon: 'Type',
+    artists: ['Jessica Hische', 'Stefan Sagmeister', 'Paula Scher'],
+    examples: 'Леттеринг, шрифтовой дизайн, кинетическая типографика'
+  },
+  {
+    id: 'street',
+    title: 'Цифровой Стрит-Арт',
+    description: 'Современное уличное искусство с использованием проекций и AR-технологий.',
+    icon: 'Spray',
+    artists: ['Banksy (digital)', 'Os Gemeos', 'Invader'],
+    examples: 'AR-граффити, проекционные инсталляции, цифровые муралы'
+  },
+  {
+    id: 'vector',
+    title: 'Векторное Искусство',
+    description: 'Создание изображений на основе математических кривых и форм.',
+    icon: 'Pentagon',
+    artists: ['Cristiano Siqueira', 'Orlando Arocena', 'Justin Maller'],
+    examples: 'Логотипы, иллюстрации, постеры'
   },
   {
     id: 'pixel',
-    title: 'Пиксель-Арт',
+    title: 'Пиксельная Графика',
     description: 'Создание изображений на уровне отдельных пикселей, вдохновленное ретро-играми.',
     icon: 'Grid3x3',
     artists: ['Paul Robertson', 'eBoy', 'Waneella'],
-    examples: 'Игровые спрайты, анимированные сцены, изометрические миры'
+    examples: 'Игровые спрайты, анимированные сцены, изометрические миры',
+    imageUrl: 'https://cdn.poehali.dev/projects/810f35c3-7b6e-48ec-b567-d0622105836e/files/b1af4fed-9c23-4a17-9b5c-af12d634a1f1.jpg'
+  },
+  {
+    id: 'music',
+    title: 'Цифровая Музыка',
+    description: 'Создание и обработка музыки с помощью компьютерных программ и синтезаторов.',
+    icon: 'Music',
+    artists: ['Deadmau5', 'Arca', 'Holly Herndon'],
+    examples: 'Электронная музыка, саунд-дизайн, музыкальная визуализация'
   },
   {
     id: 'painting',
     title: 'Digital Painting',
     description: 'Цифровая живопись с использованием графических планшетов и стилусов.',
     icon: 'Paintbrush',
-    artists: ['Loish', 'Ross Tran', 'Bobby Chiu'],
-    examples: 'Концепт-арт, иллюстрации персонажей, пейзажи'
+    artists: ['Craig Mullins', 'Ross Tran', 'Bobby Chiu'],
+    examples: 'Концепт-арт для игр, цифровые портреты, матте-пейнтинг'
   },
   {
     id: 'glitch',
@@ -52,14 +144,6 @@ const artTypes: ArtType[] = [
     icon: 'Zap',
     artists: ['Rosa Menkman', 'Nick Briz', 'Sabato Visconti'],
     examples: 'Databending, пиксель-сортинг, цифровые помехи'
-  },
-  {
-    id: 'generative',
-    title: 'Generative Art',
-    description: 'Произведения, создаваемые автономными системами по заданным алгоритмам.',
-    icon: 'Code',
-    artists: ['Tyler Hobbs', 'Manolo Gamboa Naon', 'Casey Reas'],
-    examples: 'Алгоритмические паттерны, фракталы, процедурная генерация'
   }
 ];
 
@@ -104,10 +188,10 @@ export default function Index() {
 
             <div className="flex items-center justify-center gap-2 text-muted-foreground animate-slide-up">
               <Icon name="Palette" size={20} />
-              <span className="text-sm">6 видов цифрового искусства</span>
+              <span className="text-sm">16 видов цифрового искусства</span>
               <span className="mx-2">•</span>
               <Icon name="Users" size={20} />
-              <span className="text-sm">18 известных художников</span>
+              <span className="text-sm">48+ известных художников</span>
             </div>
           </div>
         </div>
@@ -136,6 +220,17 @@ export default function Index() {
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {art.imageUrl && (
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={art.imageUrl} 
+                      alt={art.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent"></div>
+                  </div>
+                )}
                 
                 <div className="relative p-6 space-y-4">
                   <div className="flex items-start justify-between">
@@ -195,6 +290,78 @@ export default function Index() {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-20 bg-gradient-to-b from-background to-muted/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <Icon name="Clock" size={24} className="text-primary" />
+              <h2 className="text-4xl font-bold">История Цифрового Искусства</h2>
+            </div>
+            <p className="text-muted-foreground text-lg">
+              От первых компьютерных экспериментов до искусства искусственного интеллекта
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-secondary to-accent"></div>
+            
+            <div className="space-y-12">
+              <div className="relative">
+                <div className="flex items-center gap-8">
+                  <div className="flex-1 text-right">
+                    <Card className="inline-block p-6 border-primary/30 hover:border-primary transition-colors">
+                      <h3 className="text-2xl font-bold mb-2">1960-е</h3>
+                      <p className="text-muted-foreground">Пионеры компьютерной графики — первые эксперименты с алгоритмами</p>
+                    </Card>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-primary border-4 border-background z-10 flex-shrink-0"></div>
+                  <div className="flex-1"></div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="flex items-center gap-8">
+                  <div className="flex-1"></div>
+                  <div className="w-8 h-8 rounded-full bg-secondary border-4 border-background z-10 flex-shrink-0"></div>
+                  <div className="flex-1">
+                    <Card className="inline-block p-6 border-secondary/30 hover:border-secondary transition-colors">
+                      <h3 className="text-2xl font-bold mb-2">1980-е</h3>
+                      <p className="text-muted-foreground">Появление Photoshop и первых графических планшетов</p>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="flex items-center gap-8">
+                  <div className="flex-1 text-right">
+                    <Card className="inline-block p-6 border-primary/30 hover:border-primary transition-colors">
+                      <h3 className="text-2xl font-bold mb-2">2000-е</h3>
+                      <p className="text-muted-foreground">Взрывной рост 3D-моделирования и цифровой живописи</p>
+                    </Card>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-accent border-4 border-background z-10 flex-shrink-0"></div>
+                  <div className="flex-1"></div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="flex items-center gap-8">
+                  <div className="flex-1"></div>
+                  <div className="w-8 h-8 rounded-full bg-primary border-4 border-background z-10 flex-shrink-0"></div>
+                  <div className="flex-1">
+                    <Card className="inline-block p-6 border-primary/30 hover:border-primary transition-colors">
+                      <h3 className="text-2xl font-bold mb-2">2020+</h3>
+                      <p className="text-muted-foreground">Эра AI-искусства, NFT и метавселенных</p>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
